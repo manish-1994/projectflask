@@ -3,13 +3,39 @@
 {% extends "base.html" %}
 
 {% block content %}
+<script src="{{ url_for('static', filename='newcmm.js')}}"></script>
+
 
 <div style="text-align:center">
-  <form >
   <label>COMMAND PANEL</label><br>
-  <input type="text" name="commands" placeholder="enter the command">
-  <button type="submit" style="color:white;background-color:black">enter</button>
-    </form>
+  <input type="text" id="commands" placeholder="enter the command">
+  <button type="submit" id="but" onclick="submit();">SUBMIT</button>
+  <br>
 </div>
+
+<center>
+<table id="listed" class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Sl.no</th>
+      <th scope="col">Name</th>
+      <th scope="col">TimeStamp</th>
+      <th scope="col">Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>manish</td>
+      <td>2:30</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<div id="success" class="alert alert-success" role="alert"></div><br>
+<div id="error" class="alert alert-danger" role="alert"></div>
+
 
 {% endblock %}
